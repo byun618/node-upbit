@@ -57,29 +57,34 @@ export interface Snapshot {
 /**
  * Quatation Class Interface
  */
+
+export type Fiat = 'KRW' | 'BTC' | null
+
+export type Interval =
+  | 'day'
+  | 'days'
+  | 'minute1'
+  | 'minutes1'
+  | 'minute3'
+  | 'minutes3'
+  | 'minute5'
+  | 'minutes5'
+  | 'minute15'
+  | 'minutes15'
+  | 'minute30'
+  | 'minutes30'
+  | 'minute60'
+  | 'minutes60'
+  | 'minute240'
+  | 'minutes240'
+  | 'week'
+  | 'weeks'
+  | 'month'
+  | 'months'
+
 export interface GetOhlcvPayload {
   ticker?: string
-  interval?:
-    | 'day'
-    | 'days'
-    | 'minute1'
-    | 'minutes1'
-    | 'minute3'
-    | 'minutes3'
-    | 'minute5'
-    | 'minutes5'
-    | 'minute15'
-    | 'minutes15'
-    | 'minute30'
-    | 'minutes30'
-    | 'minute60'
-    | 'minutes60'
-    | 'minute240'
-    | 'minutes240'
-    | 'week'
-    | 'weeks'
-    | 'month'
-    | 'months'
+  interval?: Interval
   count?: number
   to?: string
 }

@@ -1,14 +1,16 @@
 import moment from 'moment-timezone'
-import Api from './public/api'
-import { BadTimeInterval, OverMaxCallCount } from './public/error.helper'
+import Api from './lib/api'
+import { BadTimeInterval, OverMaxCallCount } from './lib/error'
 import {
   Candle,
+  Fiat,
   GetOhlcvPayload,
   GetOhlcvRangeBasePayload,
+  Interval,
   MarketAll,
   Ohlcv,
   Snapshot,
-} from './public/interfaces'
+} from './index.d.'
 
 export default class Quotation extends Api {
   /**
@@ -20,10 +22,10 @@ export default class Quotation extends Api {
 
   /**
    * 업비트 ticker code 조회
-   * @param fiat - KRW, BTC, null 이면 all
+   * @param {Fiat} fiat - KRW, BTC, null 이면 all
    * @returns {Promise<string[]>} - ticker 배열
    */
-  async getTickers(fiat: 'KRW' | 'BTC' | null = null): Promise<string[]> {
+  async getTickers(fiat: Fiat = null): Promise<string[]> {
     const url = 'https://api.upbit.com/v1/market/all'
     const { data: items } = await super._get<MarketAll[]>(url)
 
@@ -36,10 +38,10 @@ export default class Quotation extends Api {
 
   /**
    * 업비트 캔들 조회를 위한 URL
-   * @param {string} interval - minute1, minutes1, ...
+   * @param {Interval} interval - minute1, minutes1, ...
    * @returns {string}
    */
-  #getUrlOhlcv(interval: string): string {
+  #getUrlOhlcv(interval: Interval): string {
     if (['day', 'days'].includes(interval)) {
       return 'https://api.upbit.com/v1/candles/days'
     } else if (['minute1', 'minutes1'].includes(interval)) {

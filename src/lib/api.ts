@@ -1,5 +1,5 @@
 import axios, { AxiosResponse, Method } from 'axios'
-import { UpbitApiError } from './error.helper'
+import { UpbitApiError } from './error'
 
 interface RequestPayload {
   method: Method
