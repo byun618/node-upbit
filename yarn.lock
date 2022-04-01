@@ -2338,9 +2338,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-upbit@workspace:.":
+"node-upbit-trade@workspace:.":
   version: 0.0.0-use.local
-  resolution: "node-upbit@workspace:."
+  resolution: "node-upbit-trade@workspace:."
   dependencies:
     "@types/node": ^17.0.23
     "@typescript-eslint/eslint-plugin": ^5.14.0

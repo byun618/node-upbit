@@ -1,8 +1,8 @@
 {
-  "name": "node-upbit",
+  "name": "node-upbit-trade",
   "version": "0.0.1",
   "main": "dist/index.js",
-  "repository": "https://github.com/byun618/node-upbit.git",
+  "repository": "https://github.com/byun618/node-upbit-trade.git",
   "author": "byun618 <byun618@gmail.com>",
   "license": "MIT",
   "scripts": {

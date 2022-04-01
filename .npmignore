@@ -1,0 +1,13 @@
+.env
+.env.example
+.eslintrc.js
+.gitignore
+.prettierrc.js
+Dockerfile
+jest.config.js
+src
+.github
+.vscode
+coverage
+tsconfig.json
+README.md
