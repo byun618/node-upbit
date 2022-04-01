@@ -6,7 +6,8 @@
   "author": "byun618 <byun618@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf dist && tsc"
+    "build": "rm -rf dist && tsc",
+    "dev": "ts-node -r dotenv/config src/index.ts"
   },
   "dependencies": {
     "axios": "^0.26.1",
