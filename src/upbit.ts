@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken'
 import querystring from 'querystring'
 import { v4 as uuidv4 } from 'uuid'
 import Api from './public/api'
+import { WrongCoin } from './public/error.helper'
 import {
   Account,
   LimitOrderPayload,
@@ -66,7 +67,7 @@ export default class Upbit extends Api {
     )
 
     if (!balance) {
-      throw new Error('보유한 코인이 아닙니다.')
+      throw new WrongCoin()
     }
 
     return balance

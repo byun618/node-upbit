@@ -1,5 +1,6 @@
 import moment from 'moment-timezone'
 import Api from './public/api'
+import { BadTimeInterval, OverMaxCallCount } from './public/error.helper'
 import {
   Candle,
   GetOhlcvPayload,
@@ -77,12 +78,12 @@ export default class Quotation extends Api {
   }: GetOhlcvPayload): Promise<Ohlcv[]> {
     const MAX_CALL_COUNT = 200
     if (count > MAX_CALL_COUNT) {
-      throw new Error('200을 넘게 조회할 수 없습니다.')
+      throw new OverMaxCallCount()
     }
 
     const url = this.#getUrlOhlcv(interval)
     if (!url) {
-      throw new Error('잘못된 시간 간격 입니다.')
+      throw new BadTimeInterval()
     }
 
     const _to = moment(to).utc().format('YYYY-MM-DD HH:mm:ss')
@@ -109,24 +110,24 @@ export default class Quotation extends Api {
   }
 
   /**
-   * to와 elapse를 이용해 지정한 범위 업비트 ohlcv 조회
+   * to와 time interval을 이용해 지정한 범위 업비트 ohlcv 조회
    * @param {GetOhlcvRangeBasePayload} param0 - { ticker: string, to: string, elpase: number }
    * @returns {Promise<Ohlcv>}
    */
   async getOhlcvRangeBase({
     ticker,
     to,
-    elapse,
+    timeInterval,
   }: GetOhlcvRangeBasePayload): Promise<Ohlcv> {
     const result = await this.getOhlcv({
       ticker,
       interval: 'minute60',
       to,
-      count: elapse,
+      count: timeInterval,
     })
 
     if (result.length <= 0) {
-      throw new Error('잘못된 범위 입니다.')
+      throw new BadTimeInterval()
     }
 
     return {

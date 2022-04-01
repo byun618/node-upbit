@@ -97,7 +97,7 @@ export interface Ohlcv {
 export interface GetOhlcvRangeBasePayload {
   ticker: string
   to: string
-  elapse: number
+  timeInterval: number
 }
 
 /**
