@@ -1,7 +1,7 @@
 {
   "name": "node-upbit",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": "https://github.com/byun618/node-upbit.git",
   "author": "byun618 <byun618@gmail.com>",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@types/node": "^17.0.21",
+    "@types/node": "^17.0.23",
     "@typescript-eslint/eslint-plugin": "^5.14.0",
     "@typescript-eslint/parser": "^5.14.0",
     "eslint": "7.32.0",

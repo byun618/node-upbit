@@ -1,6 +1,4 @@
 import moment from 'moment-timezone'
-import Api from './lib/api'
-import { BadTimeInterval, OverMaxCallCount } from './lib/error'
 import {
   Candle,
   Fiat,
@@ -10,7 +8,9 @@ import {
   MarketAll,
   Ohlcv,
   Snapshot,
-} from './index.d.'
+} from '.'
+import Api from './lib/api'
+import { BadTimeInterval, OverMaxCallCount } from './lib/error'
 
 export default class Quotation extends Api {
   /**

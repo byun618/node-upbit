@@ -2,15 +2,15 @@ import crypto from 'crypto'
 import jwt from 'jsonwebtoken'
 import querystring from 'querystring'
 import { v4 as uuidv4 } from 'uuid'
-import Api from './lib/api'
-import { WrongCoin } from './lib/error'
 import {
   Account,
   LimitOrderPayload,
   MarketOrderPayload,
   Order,
   OrderResponse,
-} from './index.d.'
+} from '.'
+import Api from './lib/api'
+import { WrongCoin } from './lib/error'
 
 export default class Upbit extends Api {
   readonly #access: string
