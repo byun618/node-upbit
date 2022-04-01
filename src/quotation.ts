@@ -27,7 +27,7 @@ export default class Quotation extends Api {
    */
   async getTickers(fiat: Fiat = null): Promise<string[]> {
     const url = 'https://api.upbit.com/v1/market/all'
-    const { data: items } = await super._get<MarketAll[]>(url)
+    const { data: items } = await super.get<MarketAll[]>(url)
 
     const _fiat = items
       .filter((item) => !fiat || fiat === item.market.split('-')[0])
@@ -90,7 +90,7 @@ export default class Quotation extends Api {
 
     const _to = moment(to).utc().format('YYYY-MM-DD HH:mm:ss')
 
-    const { data: items } = await super._get<Candle[]>(
+    const { data: items } = await super.get<Candle[]>(
       `${url}?market=${ticker}&count=${count}${to ? `&to=${_to}` : ''}`,
     )
 
@@ -150,7 +150,7 @@ export default class Quotation extends Api {
    */
   async getCurrentPrice(ticker: string = 'KRW-BTC'): Promise<number> {
     const url = 'https://api.upbit.com/v1/ticker'
-    const { data } = await super._get<Snapshot[]>(`${url}?markets=${ticker}`)
+    const { data } = await super.get<Snapshot[]>(`${url}?markets=${ticker}`)
 
     return data[0].trade_price
   }

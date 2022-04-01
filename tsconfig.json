@@ -13,12 +13,10 @@
     "skipLibCheck": true,
     "lib": ["dom", "es2020"],
     "esModuleInterop": true,
-    "declaration": false,
+    "declaration": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true
-    // "types": [],
-    // "typeRoots": ["./", "./node_mobules/@types"]
   },
   "ts-node": { "files": true },
   "include": ["src/**/*.ts"],

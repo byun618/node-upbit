@@ -50,7 +50,7 @@ export default class Upbit extends Api {
     const url = 'https://api.upbit.com/v1/accounts'
     const headers = this.#getHeaders()
 
-    const { data } = await super._get<Account[]>(url, null, headers)
+    const { data } = await super.get<Account[]>(url, null, headers)
 
     return data
   }
@@ -93,11 +93,7 @@ export default class Upbit extends Api {
     }
     const headers = this.#getHeaders(data)
 
-    const { data: result } = await super._post<OrderResponse>(
-      url,
-      data,
-      headers,
-    )
+    const { data: result } = await super.post<OrderResponse>(url, data, headers)
 
     return result
   }
@@ -120,11 +116,7 @@ export default class Upbit extends Api {
     }
     const headers = this.#getHeaders(data)
 
-    const { data: result } = await super._post<OrderResponse>(
-      url,
-      data,
-      headers,
-    )
+    const { data: result } = await super.post<OrderResponse>(url, data, headers)
 
     return result
   }
@@ -149,11 +141,7 @@ export default class Upbit extends Api {
     }
     const headers = this.#getHeaders(data)
 
-    const { data: result } = await super._post<OrderResponse>(
-      url,
-      data,
-      headers,
-    )
+    const { data: result } = await super.post<OrderResponse>(url, data, headers)
 
     return result
   }
@@ -176,11 +164,7 @@ export default class Upbit extends Api {
     }
     const headers = this.#getHeaders(data)
 
-    const { data: result } = await super._post<OrderResponse>(
-      url,
-      data,
-      headers,
-    )
+    const { data: result } = await super.post<OrderResponse>(url, data, headers)
 
     return result
   }
@@ -197,7 +181,7 @@ export default class Upbit extends Api {
     }
     const headers = this.#getHeaders(data)
 
-    const { data: result } = await super._get<Order>(url, data, headers)
+    const { data: result } = await super.get<Order>(url, data, headers)
 
     return result
   }

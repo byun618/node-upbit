@@ -36,7 +36,7 @@ export default class Api {
     }
   }
 
-  async _get<T>(
+  protected async get<T>(
     url: string,
     params?: {},
     headers?: {},
@@ -49,7 +49,7 @@ export default class Api {
     })
   }
 
-  async _post<T>(
+  protected async post<T>(
     url: string,
     data?: {},
     headers?: {},
