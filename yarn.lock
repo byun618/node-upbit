@@ -32,6 +32,35 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@byun618/upbit-node@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@byun618/upbit-node@workspace:."
+  dependencies:
+    "@types/node": ^17.0.23
+    "@typescript-eslint/eslint-plugin": ^5.14.0
+    "@typescript-eslint/parser": ^5.14.0
+    axios: ^0.26.1
+    dotenv: ^16.0.0
+    eslint: 7.32.0
+    eslint-config-prettier: ^8.5.0
+    eslint-import-resolver-node: ^0.3.6
+    eslint-import-resolver-typescript: ^2.5.0
+    eslint-plugin-eslint-comments: ^3.2.0
+    eslint-plugin-import: ^2.25.4
+    eslint-plugin-jest: ^26.1.1
+    eslint-plugin-prettier: ^4.0.0
+    jsonwebtoken: ^8.5.1
+    moment-timezone: ^0.5.34
+    prettier: ^2.5.1
+    querystring: ^0.2.1
+    socket.io: ^4.4.1
+    ts-node: ^10.7.0
+    ts-node-dev: ^1.1.8
+    typescript: ^4.6.2
+    uuid: ^8.3.2
+  languageName: unknown
+  linkType: soft
+
 "@cspotcode/source-map-consumer@npm:0.8.0":
   version: 0.8.0
   resolution: "@cspotcode/source-map-consumer@npm:0.8.0"
@@ -2337,35 +2366,6 @@ __metadata:
   checksum: 4d8ef8860f7e4f4d86c91db3f519d26ed5cc23b48fe54543e2afd86162b4acbd14f21de42a5db344525efb69a991e021b96a68c70c6e2d5f4a5cb770793da6d3
   languageName: node
   linkType: hard
-
-"node-upbit-trade@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "node-upbit-trade@workspace:."
-  dependencies:
-    "@types/node": ^17.0.23
-    "@typescript-eslint/eslint-plugin": ^5.14.0
-    "@typescript-eslint/parser": ^5.14.0
-    axios: ^0.26.1
-    dotenv: ^16.0.0
-    eslint: 7.32.0
-    eslint-config-prettier: ^8.5.0
-    eslint-import-resolver-node: ^0.3.6
-    eslint-import-resolver-typescript: ^2.5.0
-    eslint-plugin-eslint-comments: ^3.2.0
-    eslint-plugin-import: ^2.25.4
-    eslint-plugin-jest: ^26.1.1
-    eslint-plugin-prettier: ^4.0.0
-    jsonwebtoken: ^8.5.1
-    moment-timezone: ^0.5.34
-    prettier: ^2.5.1
-    querystring: ^0.2.1
-    socket.io: ^4.4.1
-    ts-node: ^10.7.0
-    ts-node-dev: ^1.1.8
-    typescript: ^4.6.2
-    uuid: ^8.3.2
-  languageName: unknown
-  linkType: soft
 
 "nopt@npm:^5.0.0":
   version: 5.0.0
