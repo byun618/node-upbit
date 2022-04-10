@@ -23,17 +23,25 @@ export default class Quotation extends Api {
   /**
    * 업비트 ticker code 조회
    * @param {Fiat} fiat - KRW, BTC, null 이면 all
-   * @returns {Promise<string[]>} - ticker 배열
+   * @param {boolean} verbose - 전체 조회 여부
+   * @returns
    */
-  async getTickers(fiat: Fiat = null): Promise<string[]> {
+  async getTickers(
+    fiat: Fiat = null,
+    verbose: boolean = false,
+  ): Promise<string[] | MarketAll[]> {
     const url = 'https://api.upbit.com/v1/market/all'
     const { data: items } = await super.get<MarketAll[]>(url)
 
-    const _fiat = items
-      .filter((item) => !fiat || fiat === item.market.split('-')[0])
-      .map((fiat) => fiat.market)
+    const _fiat = items.filter(
+      (item) => !fiat || fiat === item.market.split('-')[0],
+    )
 
-    return _fiat
+    if (verbose) {
+      return _fiat
+    } else {
+      return _fiat.map((fiat) => fiat.market)
+    }
   }
 
   /**
