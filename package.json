@@ -1,6 +1,6 @@
 {
   "name": "@byun618/upbit-node",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "repository": "https://github.com/byun618/upbit-node.git",
   "author": "byun618 <byun618@gmail.com>",
